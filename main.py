@@ -135,7 +135,7 @@ class FaceRecognitionApp:
 
     def start_camera_train(self):
         if not self.is_capturing:
-            self.video_capture = cv2.VideoCapture(0)
+            self.video_capture = cv2.VideoCapture("http://192.168.1.24/")
             if not self.video_capture.isOpened():
                 messagebox.showerror("Error", "Could not open webcam.")
                 return
@@ -156,7 +156,7 @@ class FaceRecognitionApp:
                 messagebox.showerror("Error", f"Failed to load model: {e}")
                 return
                 
-            self.video_capture = cv2.VideoCapture(0)
+            self.video_capture = cv2.VideoCapture("http://192.168.1.24/")
             if not self.video_capture.isOpened():
                 messagebox.showerror("Error", "Could not open webcam.")
                 return
